@@ -26,11 +26,11 @@
                         <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10">
                         </div>
                         <div
-                            class="card-detail max-w-[1130px] w-full mx-auto flex items-end justify-between pb-10 relative z-20">
+                            class="card-detail max-w-[1130px] w-full mx-auto flex items-end justify-between pb-10 relative z-20 gap-[90px]">
                             <div class="flex flex-col gap-[10px]">
                                 <p class="text-white">Featured</p>
                                 <a href="{{ route('front.detail', $featuredArticle->slug) }}"
-                                    class="font-bold text-4xl leading-[45px] text-white two-lines hover:underline transition-all duration-300">{{ $featuredArticle->name }}</a>
+                                    class="font-bold text-4xl leading-[45px] text-white two-lines hover:underline transition-all duration-300">{{ substr($featuredArticle->name, 0, 80) }}{{ strlen($featuredArticle->name) > 80 ? '...' : '' }}</a>
                                 <p class="text-white">{{ $featuredArticle->created_at->format('d M, Y') }} •
                                     {{ $featuredArticle->category->name }}</p>
                             </div>
@@ -77,7 +77,7 @@
                                     alt="thumbnail" />
                             </div>
                             <div class="card-info flex flex-col gap-[6px]">
-                                <h3 class="font-bold text-lg leading-[27px]">{{ $article->name }}</h3>
+                                <h3 class="font-bold text-lg leading-[27px]">{{ substr($article->name, 0, 50) }}{{ strlen($article->name) > 50 ? '...' : '' }}</h3>
                                 <p class="text-sm leading-[21px] text-[#A3A6AE]">
                                     {{ $article->created_at->format('d M, Y') }}</p>
                             </div>
@@ -144,7 +144,7 @@
                     Latest For You <br />
                     in Entertainment
                 </h2>
-                <a href="categoryPage.html"
+                <a href="{{ route('front.category', 'entertainment') }}"
                     class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">Explore
                     All</a>
             </div>
@@ -199,7 +199,7 @@
                     Latest For You <br />
                     in Business
                 </h2>
-                <a href="categoryPage.html"
+                <a href="{{ route('front.category', 'business') }}"
                     class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">Explore
                     All</a>
             </div>
@@ -254,7 +254,7 @@
                     Latest For You <br />
                     in Automotive
                 </h2>
-                <a href="categoryPage.html"
+                <a href="{{ route('front.category', 'automotive') }}"
                     class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">Explore
                     All</a>
             </div>

@@ -1,7 +1,7 @@
 @extends('front.master')
 @section('content')
 
-    <body class="font-[Poppins]">
+    <body class="font-[Poppins] pb-[83px]">
         <x-navbar />
 
         <nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
@@ -161,8 +161,8 @@
                 </div>
             </div>
         </section>
-
-        <script src="js/two-lines-text.js"></script>
+        
+        <x-footer />
     </body>
 @endsection
 @push('after-styles')

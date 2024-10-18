@@ -28,7 +28,16 @@
                         <p class="text-lg leading-[27px] font-semibold">{{ $author->name }}</p>
                         <span class="text-[#A3A6AE]">{{ $author->occupation }}</span>
                     </div>
-                    <div class="rounded-full font-bold p-[12px_22px] transition-all duration-300 bg-[#FF6B18] text-white hover:shadow-[0_10px_20px_0_#FF6B1880]"><a href="{{ route('front.index', '#Best-authors') }}">View All</a></div>
+                    <a href="{{ route('front.index', '#Best-authors') }}"
+                        class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
+                        <div class="w-6 h-6 flex shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M10 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M4 8a6 6 0 1 1 12 0A6 6 0 0 1 4 8m12.828-4.243a1 1 0 0 1 1.415 0a6 6 0 0 1 0 8.486a1 1 0 1 1-1.415-1.415a4 4 0 0 0 0-5.656a1 1 0 0 1 0-1.415m.702 13a1 1 0 0 1 1.212-.727c1.328.332 2.169 1.18 2.652 2.148c.468.935.606 1.98.606 2.822a1 1 0 1 1-2 0c0-.657-.112-1.363-.394-1.928c-.267-.533-.677-.934-1.349-1.102a1 1 0 0 1-.727-1.212zM6.5 18C5.24 18 4 19.213 4 21a1 1 0 1 1-2 0c0-2.632 1.893-5 4.5-5h7c2.607 0 4.5 2.368 4.5 5a1 1 0 1 1-2 0c0-1.787-1.24-3-2.5-3z" />
+                            </svg>
+                        </div>
+                        <span>View All</span>
+                    </a>
                 </div>
             </div>
             <div id="content-cards" class="grid grid-cols-3 gap-[30px]">
